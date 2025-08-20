@@ -3,30 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hurricane Tracker</title>
+  <title>Hurricane Tracker Pro</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: linear-gradient(to bottom, #87ceeb, #fff);
-      margin: 0;
-      padding: 0;
-    }
-    #alerts {
-      margin-top: 30px;
-      color: red;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    label {
-      display: block;
-      margin-top: 20px;
-      font-size: 16px;
-    }
+    body { font-family: Arial; text-align: center; margin: 0; padding: 0; background: #eef; }
+    #alerts { margin-top: 10px; font-weight: bold; font-size: 16px; }
+    #map { height: 400px; width: 95%; margin: 20px auto; border: 2px solid #333; }
+    label { display: block; margin: 10px; font-size: 16px; }
   </style>
 </head>
 <body>
-  <h1>Free Hurricane Tracker</h1>
+  <h1>Hurricane Tracker Pro</h1>
   <div id="alerts">Loading hurricane data...</div>
 
   <label>
@@ -34,6 +21,9 @@
     Enable Hurricane Notifications
   </label>
 
-  <script src="hurricane.js"></script>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="hurricane_map.js"></script>
 </body>
 </html>
