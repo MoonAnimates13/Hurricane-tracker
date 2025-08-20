@@ -4,7 +4,7 @@ const notifyToggle = document.getElementById('notifyToggle');
 if ('Notification' in window) Notification.requestPermission();
 
 // Initialize map
-const map = L.map('map').setView([25, -80], 4); // Default view: Florida region
+const map = L.map('map').setView([25, -80], 4); // Default: Florida region
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Map data © OpenStreetMap contributors'
 }).addTo(map);
@@ -14,7 +14,8 @@ let hurricaneMarkers = [];
 // Fetch and display hurricanes
 async function updateHurricanes() {
   try {
-    const res = await fetch('https://www.nhc.noaa.gov/CurrentStorms.json');
+    // Fetch hurricane JSON from GitHub (free public JSON)
+    const res = await fetch('https://raw.githubusercontent.com/fillyourcloud/nhc-json/main/current.json');
     const data = await res.json();
 
     // Clear previous markers
@@ -28,7 +29,7 @@ async function updateHurricanes() {
 
     let alertText = "";
     data.storms.forEach(storm => {
-      if (storm.type === "Hurricane") {
+      if (storm.type.toLowerCase() === "hurricane") {
         // Color by category
         let color = storm.category >= 3 ? 'red' : storm.category === 2 ? 'orange' : 'yellow';
 
