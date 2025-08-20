@@ -3,42 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Weather App</title>
+  <title>Hurricane Tracker</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       background: linear-gradient(to bottom, #87ceeb, #fff);
-      margin: 0; padding: 0;
-    }
-    #weather {
-      margin-top: 50px;
+      margin: 0;
+      padding: 0;
     }
     #alerts {
-      margin-top: 20px;
+      margin-top: 30px;
       color: red;
       font-weight: bold;
+      font-size: 18px;
     }
-    button {
+    label {
+      display: block;
       margin-top: 20px;
-      padding: 10px 20px;
       font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <h1>Advanced Weather App</h1>
-  <div id="weather">
-    <p>Loading weather data...</p>
-  </div>
-
-  <div id="alerts"></div>
+  <h1>Free Hurricane Tracker</h1>
+  <div id="alerts">Loading hurricane data...</div>
 
   <label>
     <input type="checkbox" id="notifyToggle">
     Enable Hurricane Notifications
   </label>
 
-  <script src="weather.js"></script>
+  <script src="hurricane.js"></script>
 </body>
 </html>
